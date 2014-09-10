@@ -18,13 +18,13 @@ import android.util.Log;
 
 public class Screen implements Renderer, FrameRateUpdateInterface
 {
-	private ByteBuffer buffer;
+	public ByteBuffer buffer;
 	private FloatBuffer quad;
 	private int textureWidth;
 	private int textureHeight;
 	private int textureID;
 
-	private int w, h;
+	public int w, h;
 	private boolean isSmooth;
 
 	private FrameRateCalculator frc;
@@ -109,7 +109,7 @@ public class Screen implements Renderer, FrameRateUpdateInterface
 	{
 		frc.frameBegin();
 		
-		NativeCalls.draw(buffer, w, h);
+		//NativeCalls.draw(buffer, w, h);
 		
 		gl.glTexSubImage2D(GL10.GL_TEXTURE_2D, 0, 0, 0, w, h, GL10.GL_RGBA, format, buffer);
 		gl.glDrawArrays(GL10.GL_TRIANGLE_FAN, 0, 4);

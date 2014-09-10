@@ -112,12 +112,13 @@ struct StrangeState
 StrangeState s;
 bool firstCall = true;
 float time = 0;
-int length = 1024 * 4;
+int length = 1024 * 16;
 
 int color(float r, float g, float b)
 {
 	return ((int) (b * 255) << 16) | ((int) (g * 255) << 8) | ((int) (r * 255));
 }
+
 
 struct Screen
 {
